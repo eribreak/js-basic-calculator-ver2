@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Caculator</title>
+</head>
+
+<body>
+
+    <script type="text/javascript" scr="calMachine.js">
+        function calMachine(value) {
+
+            var str = document.frm.result.value;
+
+            if (value == 'x') {
+                value = '*';
+            }
+            if (value == '=') {
+                str = eval(str);
+            }
+            else if (value == 'AC') {
+                str = '';
+            }
+            else {
+                str += value;
+            }
+            document.frm.result.value = str;
+        }
+
+
+    </script>
+
+    <form name="frm" method="post">
+        <table align="center" border="1" cellspacing="1" cellpadding="1">
+            <tr>
+                <td colspan="4"><textarea name="result"></textarea></td>
+            </tr>
+            <tr>
+                <td><input onclick="calMachine(this.value);" type="button" value="7" /></td>
+                <td><input onclick="calMachine(this.value);" type="button" value="8" /></td>
+                <td><input onclick="calMachine(this.value);" type="button" value="9" /></td>
+                <td><input onclick="calMachine(this.value);" type="button" value="+" /></td>
+            </tr>
+            <tr>
+                <td><input onclick="calMachine(this.value);" type="button" value="4" /></td>
+                <td><input onclick="calMachine(this.value);" type="button" value="5" /></td>
+                <td><input onclick="calMachine(this.value);" type="button" value="6" /></td>
+                <td><input onclick="calMachine(this.value);" type="button" value="-" /></td>
+            </tr>
+            <tr>
+                <td><input onclick="calMachine(this.value);" type="button" value="1" /></td>
+                <td><input onclick="calMachine(this.value);" type="button" value="2" /></td>
+                <td><input onclick="calMachine(this.value);" type="button" value="3" /></td>
+                <td><input onclick="calMachine(this.value);" type="button" value="x" /></td>
+            </tr>
+            <tr>
+                <td><input onclick="calMachine(this.value);" type="button" value="0" /></td>
+                <td><input onclick="calMachine(this.value);" type="button" value="AC" /></td>
+                <td><input onclick="calMachine(this.value);" type="button" value="=" /></td>
+                <td><input onclick="calMachine(this.value);" type="button" value="/" /></td>
+            </tr>
+        </table>
+    </form>
+
+</body>
+
+</html>
